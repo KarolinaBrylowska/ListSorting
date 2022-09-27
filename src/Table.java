@@ -8,6 +8,11 @@ public class Table {
         sorting1(table);
 
         System.out.println("Table after sorting (ascending)" + Arrays.toString(table));
+
+        sorting2(table);
+
+        System.out.println("Table after sorting (descending)" + Arrays.toString(table));
+
     }
 
     static void sorting1(int[] table) {
@@ -23,4 +28,18 @@ public class Table {
             }
         }
     }
+    static void sorting2(int[] table) {
+        for (int i = 0; i < table.length; i++) {
+            for (int j = i + 1; j < table.length; j++) {
+                int value1 = table[i];
+                int value2 = table[j];
+
+                if (value1 < value2) {
+                    table[i] = value2;
+                    table[j] = value1;
+                }
+            }
+        }
+    }
 }
+
